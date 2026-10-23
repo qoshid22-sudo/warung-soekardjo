@@ -1,0 +1,9 @@
+{
+  "payments": { "Tunai": true, "QRIS": true, "Transfer": true },
+  "banks": [
+    { "bank": "BCA", "number": "1234567890", "holder": "Warung Soekardjo" },
+    { "bank": "BRI", "number": "0987654321", "holder": "Warung Soekardjo" }
+  ],
+  "qris_image": "qris.png",
+  "wa": "6281234567890"
+}

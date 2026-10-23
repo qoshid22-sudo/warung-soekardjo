@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Kasir – Warung Soekardjo</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<section id="login" class="hide">
+  <div class="login card">
+    <div class="em">🔐</div>
+    <h2>Login admin</h2>
+    <form id="lf">
+      <div class="f"><label for="pw">Password</label><input id="pw" type="password" autocomplete="current-password" maxlength="200" required></div>
+      <div class="err hide" id="lerr"></div>
+      <button class="btn" type="submit">Masuk</button>
+    </form>
+  </div>
+</section>
+
+<section id="app" class="hide">
+  <header>
+    <div class="brand"><span class="em">🐔</span><div>Warung Soekardjo<small>Kasir &amp; pesanan</small></div></div>
+    <nav class="tabs" id="tabs">
+      <button data-t="pesanan" class="on">Pesanan</button>
+      <button data-t="menu">Kelola menu</button>
+      <button data-t="laporan">Laporan</button>
+      <button data-t="akun">Akun</button>
+    </nav>
+  </header>
+  <main>
+    <section class="pg" id="p-pesanan">
+      <div class="chips" id="ofil"><button class="chip on" data-f="aktif">Aktif</button><button class="chip" data-f="selesai">Selesai</button><button class="chip" data-f="batal">Batal</button></div>
+      <div id="olist"></div>
+    </section>
+    <section class="pg hide" id="p-menu">
+      <div class="card"><b>Tambah menu</b>
+        <div class="mrow"><input id="nic" value="🍽️" maxlength="8" aria-label="Ikon"><input id="nn" maxlength="40" placeholder="Nama menu" aria-label="Nama menu"><input id="np" type="number" min="0" placeholder="Harga" aria-label="Harga"><select id="nc" aria-label="Kategori"></select><button class="btn s" id="add">Tambah</button></div>
+      </div>
+      <div class="card" id="mlist"></div>
+    </section>
+    <section class="pg hide" id="p-laporan">
+      <h2>Laporan hari ini</h2>
+      <div class="stats" id="stats"></div>
+      <div class="card"><b>Menu terlaris</b><div id="top"></div></div>
+      <div class="card"><b>Per metode bayar</b><div id="meth"></div></div>
+    </section>
+    <section class="pg hide" id="p-akun">
+      <div class="card"><b>Ganti password</b>
+        <form id="pf">
+          <div class="f"><label for="po">Password lama</label><input id="po" type="password" autocomplete="current-password" maxlength="200" required></div>
+          <div class="f"><label for="pn">Password baru (min. 10 karakter)</label><input id="pn" type="password" autocomplete="new-password" minlength="10" maxlength="200" required></div>
+          <button class="btn" type="submit">Simpan password</button>
+        </form>
+      </div>
+      <button class="btn g" id="logout">Keluar</button>
+    </section>
+  </main>
+</section>
+<div class="toast" id="toast" role="status"></div>
+<script src="/static/kasir.js" defer></script>
+</body>
+</html>

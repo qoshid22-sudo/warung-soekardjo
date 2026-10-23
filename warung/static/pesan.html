@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pesan Online – Warung Soekardjo</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header><div class="brand"><span class="em">🐔</span><div>Warung Soekardjo<small>Pesan online · diantar atau ambil sendiri</small></div></div></header>
+<main>
+  <section id="done" class="hide">
+    <h2>Pesanan terkirim ✅</h2>
+    <div class="card">
+      <p class="mut">Simpan kode pesananmu. Status diperbarui otomatis.</p>
+      <div class="code" id="code"></div>
+      <div id="status"></div>
+      <div id="pinst"></div>
+      <div id="dsum"></div>
+      <button class="btn g" id="again">Buat pesanan baru</button>
+    </div>
+  </section>
+
+  <section id="form">
+    <h2 class="first">1. Pilih cara menerima pesanan</h2>
+    <div class="mode" id="mode">
+      <button data-m="Ambil sendiri" class="on">🏪 Ambil sendiri<small>Datang ke warung</small></button>
+      <button data-m="Antar">🛵 Diantar<small>Ke alamat kamu</small></button>
+    </div>
+    <h2>2. Pilih menu</h2>
+    <div class="chips" id="chips"></div>
+    <div class="card" id="list"><p class="mut">Memuat menu…</p></div>
+    <h2>3. Data pemesan</h2>
+    <div class="card">
+      <div class="f"><label for="nm">Nama</label><input id="nm" maxlength="60" autocomplete="name"></div>
+      <div class="f"><label for="hp">No. HP / WhatsApp</label><input id="hp" type="tel" maxlength="20" inputmode="tel" autocomplete="tel"></div>
+      <div class="f hide" id="adr"><label for="al">Alamat pengantaran</label><textarea id="al" rows="2" maxlength="200" placeholder="Jalan, nomor rumah, patokan"></textarea></div>
+      <div class="f" id="jam"><label for="jm">Jam ambil</label><select id="jm"><option>Secepatnya</option><option>30 menit lagi</option><option>1 jam lagi</option></select></div>
+      <div class="f"><label for="ct">Catatan (opsional)</label><input id="ct" maxlength="200" placeholder="Mis. sambal dipisah"></div>
+    </div>
+    <h2>4. Pembayaran</h2>
+    <div class="card">
+      <div class="pays" id="pays"></div>
+      <div class="f hide" id="bankwrap"><label>Pilih bank tujuan transfer</label><div class="pays" id="banks"></div></div>
+      <div class="note" id="pnote"></div>
+    </div>
+    <h2>5. Ringkasan</h2>
+    <div class="card">
+      <div id="sum"></div>
+      <div class="row tot"><span>Total menu</span><span id="tot">Rp 0</span></div>
+      <div class="note" id="info"></div>
+      <div class="err hide" id="err"></div>
+      <button class="btn" id="send">Kirim pesanan</button>
+      <p class="mut">Warung akan mengonfirmasi lewat WhatsApp. Pembayaran sesuai kesepakatan dengan admin.</p>
+    </div>
+  </section>
+</main>
+<button class="bar hide" id="bar"><span id="bn">0 item</span><span id="bt">Rp 0</span></button>
+<div class="toast" id="toast" role="status"></div>
+<script src="/static/pesan.js" defer></script>
+</body>
+</html>
